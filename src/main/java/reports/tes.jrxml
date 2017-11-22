@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="tes" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="30" bottomMargin="30" uuid="4aa1155d-fce8-4688-90c8-22e88af0a6ea">
+	<property name="zoom.factor" value="50.0"/>
+	<property name="DATASOURCE" value="jdbc/Relatorio"/>
+	<property name="REPORT_DATASET" value="[{&quot;name&quot;:&quot;TESTE&quot;,&quot;j4CDataset&quot;:{&quot;datasetType&quot;:&quot;DATASOURCE&quot;,&quot;freeQuery&quot;:false,&quot;jndiConnection&quot;:&quot;jdbc/Relatorio&quot;,&quot;recordLimit&quot;:10,&quot;tables&quot;:[{&quot;name&quot;:&quot;USER&quot;}],&quot;joins&quot;:[{&quot;right&quot;:{&quot;parent&quot;:{&quot;name&quot;:&quot;USER&quot;},&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;VARCHAR&quot;},&quot;operator&quot;:&quot;EQUALS&quot;,&quot;left&quot;:{&quot;parent&quot;:{&quot;name&quot;:&quot;ROLE&quot;},&quot;name&quot;:&quot;fk_user&quot;}}],&quot;columns&quot;:[{&quot;parent&quot;:{&quot;name&quot;:&quot;USER&quot;},&quot;name&quot;:&quot;theme&quot;,&quot;type&quot;:&quot;VARCHAR&quot;},{&quot;parent&quot;:{&quot;name&quot;:&quot;USER&quot;},&quot;name&quot;:&quot;picture&quot;,&quot;type&quot;:&quot;VARCHAR&quot;},{&quot;parent&quot;:{&quot;name&quot;:&quot;USER&quot;},&quot;name&quot;:&quot;password&quot;,&quot;type&quot;:&quot;VARCHAR&quot;},{&quot;parent&quot;:{&quot;name&quot;:&quot;USER&quot;},&quot;name&quot;:&quot;name&quot;,&quot;type&quot;:&quot;VARCHAR&quot;},{&quot;parent&quot;:{&quot;name&quot;:&quot;USER&quot;},&quot;name&quot;:&quot;login&quot;,&quot;type&quot;:&quot;VARCHAR&quot;},{&quot;parent&quot;:{&quot;name&quot;:&quot;USER&quot;},&quot;name&quot;:&quot;email&quot;,&quot;type&quot;:&quot;VARCHAR&quot;},{&quot;parent&quot;:{&quot;name&quot;:&quot;ROLE&quot;},&quot;name&quot;:&quot;fk_user&quot;,&quot;type&quot;:&quot;VARCHAR&quot;},{&quot;parent&quot;:{&quot;name&quot;:&quot;ROLE&quot;},&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;VARCHAR&quot;}],&quot;wheres&quot;:[],&quot;persistenceUnitName&quot;:&quot;app&quot;},&quot;main&quot;:true}]"/>
+	<queryString>
+		<![CDATA[SELECT
+    `USER`.theme ,
+    `USER`.picture ,
+    `USER`.password ,
+    `USER`.name ,
+    `USER`.login ,
+    `USER`.email ,
+    `ROLE`.fk_user ,
+    `ROLE`.id 
+FROM
+    `USER` ,
+    `ROLE` 
+WHERE
+    `ROLE`.fk_user = `USER`.id ]]>
+	</queryString>
+	<field name="theme" class="java.lang.String">
+		<fieldDescription><![CDATA[theme]]></fieldDescription>
+	</field>
+	<field name="picture" class="java.lang.String">
+		<fieldDescription><![CDATA[picture]]></fieldDescription>
+	</field>
+	<field name="password" class="java.lang.String">
+		<fieldDescription><![CDATA[password]]></fieldDescription>
+	</field>
+	<field name="name" class="java.lang.String">
+		<fieldDescription><![CDATA[name]]></fieldDescription>
+	</field>
+	<field name="login" class="java.lang.String">
+		<fieldDescription><![CDATA[login]]></fieldDescription>
+	</field>
+	<field name="email" class="java.lang.String">
+		<fieldDescription><![CDATA[email]]></fieldDescription>
+	</field>
+	<field name="fk_user" class="java.lang.String">
+		<fieldDescription><![CDATA[fk_user]]></fieldDescription>
+	</field>
+	<field name="id" class="java.lang.String">
+		<fieldDescription><![CDATA[id]]></fieldDescription>
+	</field>
+	<title>
+		<band height="79"/>
+	</title>
+	<pageHeader>
+		<band height="35">
+			<textField>
+				<reportElement x="50" y="11" width="100" height="20" uuid="b414cf6d-ba12-45c9-aa45-59e526cf3f5b"/>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Teste"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61">
+			<staticText>
+				<reportElement x="135" y="2" width="100" height="20" uuid="606ec375-27a6-486c-8d2d-77b0b8e6fa72"/>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[login]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="12" y="3" width="100" height="20" uuid="b81c6282-0222-49d0-9ac1-a1ab6b50474b"/>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="303" y="2" width="100" height="20" uuid="629168b7-aee1-4e6a-9962-4be5400f3b18"/>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[password]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125">
+			<textField>
+				<reportElement x="135" y="4" width="100" height="20" uuid="d1780023-18c7-45ec-ad0f-d5fa8d729358"/>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{login}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="7" y="7" width="100" height="20" uuid="42fc2dfa-2bd0-4d51-9042-cbb7e5b7e048"/>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="303" y="3" width="100" height="20" uuid="b8d2d2e9-5aaa-46f0-b7eb-5ddf53b13a79"/>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{password}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54"/>
+	</pageFooter>
+	<summary>
+		<band height="42"/>
+	</summary>
+</jasperReport>
